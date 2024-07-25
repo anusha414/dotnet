@@ -6,11 +6,6 @@ on:
 jobs:
 
   build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-
-      - name: Call Hello World Action
-        uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
+    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
+    with:
+      FILENAME: Program.csproj
