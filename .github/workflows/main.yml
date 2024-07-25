@@ -1,0 +1,35 @@
+name: .NET with actions
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x' # Adjust based on your .NET version
+
+    - name: Restore dependencies
+      run: dotnet restore
+        
+    - name: Build
+      uses: anusha414/reusable-demo-workflows/.github/actions/build@master
+      
+    - name: Test
+      uses: anusha414/reusable-demo-workflows/.github/actions/test@master
+
+    - name: Run Hello World
+      uses: anusha414/reusable-demo-workflows/.github/actions/run@master
+      with:
+        FILENAME: Program.csproj
+    
+    - name: upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: build
+          path: bin/Release/netcoreapp3.1/
