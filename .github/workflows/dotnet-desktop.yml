@@ -24,3 +24,6 @@ jobs:
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Run Hello World
+      run: dotnet run --project Program.cs
