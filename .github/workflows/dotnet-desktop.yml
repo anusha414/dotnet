@@ -27,3 +27,9 @@ jobs:
 
     - name: Run Hello World
       run: dotnet run --project Program.csproj
+    
+    - name: upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: build
+          path: bin/Release/netcoreapp3.1/
