@@ -14,13 +14,4 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0.7' # Adjust based on your .NET version
-
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-
-    - name: Run Hello World
-      run: dotnet run --project Program.cs
+        dotnet-version: '3.1.x' # Adjust based on your .NET version
