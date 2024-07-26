@@ -19,4 +19,7 @@ jobs:
 
     - name: Dotnet Tests
       uses: EasyDesk/action-dotnet-test@v1.3.0  
+      
+    - name: Dotnet Tests
+      run: dotnet test
     
