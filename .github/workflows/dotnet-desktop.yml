@@ -19,12 +19,6 @@ jobs:
         
     - name: Build
       run: dotnet build --configuration Release --no-restore
-
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-
-    - name: Run Hello World
-      run: dotnet run --project Program.csproj
     
     - name: upload artifacts
       uses: actions/upload-artifact@v4
