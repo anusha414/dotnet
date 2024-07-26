@@ -17,16 +17,6 @@ jobs:
     - name: build and package
       uses: anusha414/reusable-demo-workflows/.github/actions/package@master
 
-    - name: Run Hello World
-      uses: anusha414/reusable-demo-workflows/.github/actions/run@master
-      with:
-        FILENAME: Program.csproj
+    - name: Run dotnet-script
+      uses: frankhaugen/frank-dotnet-script-run@1.0        
     
-    - name: Publish
-      run: dotnet publish --configuration Release --no-build --output ./output
-
-    - name: Upload Published Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-          name: dotnet-publish
-          path: ./output
