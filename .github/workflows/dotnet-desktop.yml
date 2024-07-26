@@ -15,5 +15,5 @@ jobs:
         dotnet-version: '3.1.x' # Adjust based on your .NET version
        
     - name: Build
-      run: ddotnet run --project Program.csproj
+      run: dotnet run --project Program.csproj
   
