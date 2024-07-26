@@ -14,22 +14,10 @@ jobs:
       with:
         dotnet-version: '3.1.x' # Adjust based on your .NET version
 
-    - name: Restore dependencies
-      run: dotnet restore
-        
-    - name: Build
-      uses: anusha414/reusable-demo-workflows/.github/actions/build@master
-      
-    - name: Test
-      uses: anusha414/reusable-demo-workflows/.github/actions/test@master
+    - name: build and package
+      uses: anusha414/reusable-demo-workflows/.github/actions/package@master
 
     - name: Run Hello World
       uses: anusha414/reusable-demo-workflows/.github/actions/run@master
       with:
         FILENAME: Program.csproj
-    
-    - name: upload artifacts
-      uses: actions/upload-artifact@v4
-      with:
-          name: build
-          path: bin/Release/netcoreapp3.1/
