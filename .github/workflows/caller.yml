@@ -17,7 +17,7 @@ jobs:
       FILENAME: Program.csproj
 
   all:
-    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnetrun.yml@master
+    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
     with:
       FILENAME: Program.csproj
     
