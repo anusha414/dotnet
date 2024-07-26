@@ -15,7 +15,11 @@ jobs:
         dotnet-version: '3.1.x' # Adjust based on your .NET version
 
     - name: build and package
-      uses: anusha414/reusable-demo-workflows/.github/actions/package@master
+      uses: anusha414/reusable-demo-workflows/.github/actions/restore and build@master
+
+    - name: Dotnet Tests
+      uses: EasyDesk/action-dotnet-test@v1.3.0
+            
 
     - name: Run dotnet-script
       uses: frankhaugen/frank-dotnet-script-run@1.0        
