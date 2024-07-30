@@ -5,19 +5,27 @@ on:
 
 jobs:
 
-  build:
-    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnetbuild.yml@master
+  # build:
+  #   uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnetbuild.yml@master
 
-  test:
-    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnettest.yml@master
+  # test:
+  #   uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnettest.yml@master
     
-  run:
-    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnetrun.yml@master
-    with:
-      FILENAME: Program.csproj
+  # run:
+  #   uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnetrun.yml@master
+  #   with:
+  #     FILENAME: Program.csproj
 
   all:
-    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
-    with:
-      FILENAME: Program.csproj
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@v4
+      with:
+        repository: anusha414/dotnet
+        ref: master
+        
+    - uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
+      with:
+        FILENAME: Program.csproj
     
