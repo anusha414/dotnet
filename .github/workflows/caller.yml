@@ -17,14 +17,6 @@ jobs:
   #     FILENAME: Program.csproj
 
   all:
-    runs-on: ubuntu-latest
-    steps:
-    
-    - uses: actions/checkout@v4
-      with:
-        repository: anusha414/dotnet
-        ref: master
-        
     - uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
       with:
         FILENAME: Program.csproj
