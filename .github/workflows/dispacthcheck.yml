@@ -1,6 +1,8 @@
 name: dotnet using calling
 
 on:
+  push: 
+    branches: [ "dotnet/old" ]
   workflow_dispatch:
 
 jobs:
