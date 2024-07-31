@@ -1,0 +1,9 @@
+name: dotnet using calling
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnetbuild.yml@master
