@@ -19,4 +19,4 @@ jobs:
   all:
     uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
     with:
-      path: src/azFunction
+      path1: src/azFunction
