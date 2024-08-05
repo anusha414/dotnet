@@ -23,7 +23,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore src/azFunction
     - name: Build
-      run: dotnet build src/azFunction --configuration Release --output ./output
+      run: dotnet build src/azFunction --configuration Release --no-restore --output ./output
 
     - name: upload artifacts
       uses: actions/upload-artifact@v4
