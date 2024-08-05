@@ -2,12 +2,6 @@ name: dotnet using calling
 
 on:
   workflow_dispatch:
-   inputs: 
-    path1: 
-      description: 'The version of .NET to install' 
-      required: true
-      default: 'src/azFunction'
-      type: string  
 
 jobs:
 
@@ -25,4 +19,4 @@ jobs:
   all:
     uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
     with:
-      path1: ${{ github.event.inputs.path1 }}
+      path1: src/azFunction
