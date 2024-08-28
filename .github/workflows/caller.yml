@@ -21,3 +21,4 @@ jobs:
     uses: anusha414/reusable-demo-workflows/.github/workflows/reusable-dotnet.yml@master
     with:
       path1: src/azFunction
+      configuration: Release
