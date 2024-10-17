@@ -35,8 +35,8 @@ jobs:
         env:
           DOTNET_CLI_HOME: /tmp # Required for installing global tools
 
-      - name: Upload Swagger file
-        uses: actions/upload-artifact@v2
-        with:
-          name: swagger-json
-          path: swagger.json
+      # - name: Upload Swagger file
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: swagger-json
+      #     path: swagger.json
