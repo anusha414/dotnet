@@ -30,10 +30,12 @@ jobs:
 
       - name: Generate Swagger file
         run: |
-          dotnet tool install --global dotnet-swagger
-          dotnet swagger tofile --output swagger.json ./publish/Program.dll v1
-        env:
-          DOTNET_CLI_HOME: /tmp # Required for installing global tools
+          # Start the application in the background
+          dotnet ./publish/Program.dll &
+          sleep 10 # Wait for the application to start
+
+          # Fetch the Swagger JSON
+          curl -o swagger.json http://localhost:5000/swagger/v1/swagger.json
 
       # - name: Upload Swagger file
       #   uses: actions/upload-artifact@v2
