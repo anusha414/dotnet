@@ -1,32 +1,42 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: .NET
+name: Generate Swagger
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - main # Change this to your default branch if needed
   pull_request:
-    branches: [ "master" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 3.1.x
-    - name: Restore dependencies
-      run: dotnet restore src/azFunction
-    - name: Build
-      run: dotnet build src/azFunction --configuration Release --no-restore --output ./output
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: upload artifacts
-      uses: actions/upload-artifact@v4
-      with:
-          name: artifact
-          path: ./output/
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '7.0' # Specify your target .NET version
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --configuration Release
+
+      - name: Publish project
+        run: dotnet publish --configuration Release --output ./publish
+
+      - name: Generate Swagger file
+        run: |
+          dotnet tool install --global dotnet-swagger
+          dotnet swagger tofile --output swagger.json ./publish/<YourProjectName>.dll v1
+        env:
+          DOTNET_CLI_HOME: /tmp # Required for installing global tools
+
+      - name: Upload Swagger file
+        uses: actions/upload-artifact@v2
+        with:
+          name: swagger-json
+          path: swagger.json
