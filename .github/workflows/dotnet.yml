@@ -31,7 +31,7 @@ jobs:
       - name: Generate Swagger file
         run: |
           dotnet tool install --global dotnet-swagger
-          dotnet swagger tofile --output swagger.json ./publish/<YourProjectName>.dll v1
+          dotnet swagger tofile --output swagger.json ./publish/Program.dll v1
         env:
           DOTNET_CLI_HOME: /tmp # Required for installing global tools
 
