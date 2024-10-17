@@ -3,7 +3,7 @@ name: Generate Swagger
 on:
   push:
     branches:
-      - main # Change this to your default branch if needed
+      - master # Change this to your default branch if needed
   pull_request:
 
 jobs:
