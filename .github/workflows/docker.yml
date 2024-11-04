@@ -18,7 +18,7 @@ jobs:
       - name: Docker Login
         uses: docker/login-action@v3
         with:
-          registry:  "https://login.docker.com/u/login"       # e.g., 'your.registry.com'
+          registry:  "docker.io"       # e.g., 'your.registry.com'
           username: "anusha414"            # e.g., 'your_username'
           password: "Anusha414"             # e.g., 'your_password'
 
