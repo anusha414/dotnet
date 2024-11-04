@@ -20,7 +20,7 @@ jobs:
         with:
           registry:  "docker.io"       # e.g., 'your.registry.com'
           username: "anusha414"            # e.g., 'your_username'
-          password: "Anusha414"             # e.g., 'your_password'
+          password: "Anusha$777"             # e.g., 'your_password'
 
       # Step 3: Pull the Docker image
       - name: Pull Docker Image
